@@ -14,6 +14,7 @@ simple, small library to save your time for accept cookie prompt to users
 > Note: Use setters before initializing
 
 ---
+```javascript
 
     // set expiration in days for the cookie, default : 365 days
     __AcceptCookie.setExpiration(365) ;
@@ -42,7 +43,7 @@ simple, small library to save your time for accept cookie prompt to users
     // set custom html for prompt
     //accepts html string or node else throws console error
     setHTML(htmlStringOrNode);
-
+```
 > Note: Use setters then \_\_AcceptCookie.initialize();
 
 ### events
