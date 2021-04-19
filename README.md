@@ -59,13 +59,13 @@ onAccepted();
 onCancel();
 ```
 
-##defaults
+## defaults
 
 #### UI
 
 [![Default UI](https://i.imgur.com/a4e8E8a.png "Default UI")](http://i.imgur.com/a4e8E8a.png "Default UI")
 
-####Values
+#### Values
 
 ```json
     expirationDays : 365
