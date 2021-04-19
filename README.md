@@ -19,7 +19,7 @@
     };
 
 > initialize accept cookie js with default values
-> just load the library and initialize it to use
+> just load the library (use accept-cookie-main.js) and initialize it to use
 
 ### setters
 
