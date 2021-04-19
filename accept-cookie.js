@@ -15,14 +15,14 @@ let __AcceptCookie = {
     showPx: '10px',
     bgColor: '#000000',
     borderRadius: '10px',
-    css: ".__AcceptCookie{position:fixed;bottom:10px;padding:20px;background-color:#000;color:#fff;width:60%;left:20%;margin:0;overflow:auto;box-sizing:border-box;border-radius:10px;margin-bottom:10px;font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Geneva,Verdana,sans-serif;-webkit-transition:all .3s ease;-moz-transition:all .3s ease;-o-transition:all .3s ease;transition:all .3s ease}.__AcceptCookie .__accept_text{padding:4px 0 0 0;float:left;text-align:justify}.__AcceptCookie .__accept_btn,.__AcceptCookie>button{float:right;padding:8px;box-sizing:border-box;background-color:#f0f8ff;color:#000;text-align:center;border-radius:4px;outline:0;border:none;cursor:pointer;font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Geneva,Verdana,sans-serif;min-width:50px;z-index:100000}.__AcceptCookie>button:active{background-color:#faebd7}.__AcceptCookie .__accept_btn{border-radius:0;background-color:#000;padding:4px 2px 2px 2px}@media screen and (max-width:768px){.__AcceptCookie{width:80%;left:10%}.__AcceptCookie .__accept_btn,.__AcceptCookie>button{display:block;width:100%;margin-top:8px;padding:10px;font-size:16px}}"
+    css: ".__AcceptCookie{position:fixed;bottom:10px;padding:20px;background-color:#000;color:#fff;width:60%;left:20%;margin:0;overflow:auto;box-sizing:border-box;border-radius:10px;margin-bottom:10px;font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Geneva,Verdana,sans-serif;-webkit-transition:all .3s ease;-moz-transition:all .3s ease;-o-transition:all .3s ease;transition:all .3s ease}.__AcceptCookie .__accept_text{padding:4px 0 0 0;float:left;text-align:justify}.__AcceptCookie>button,.__AcceptCookie .__accept_btn{float:right;padding:8px;box-sizing:border-box;background-color:aliceblue;color:#000;text-align:center;border-radius:4px;outline:none;border:none;cursor:pointer;font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Geneva,Verdana,sans-serif;min-width:50px;z-index:100000}.__AcceptCookie>button:active{background-color:antiquewhite}.__AcceptCookie .__accept_btn{border-radius:0;background-color:rgb(0,0,0);padding:4px 2px 2px 2px}.__AcceptCookie a{outline:none;color:aqua!important;text-decoration:none}.__AcceptCookie a:hover{text-decoration:underline}@media screen and (max-width:768px){.__AcceptCookie{width:80%;left:10%}.__AcceptCookie>button,.__AcceptCookie .__accept_btn{display:block;width:100%;margin-top:8px;padding:10px;font-size:16px}}"
   },
   el: () => {
     return document.getElementById(__AcceptCookie.defaults.elId);
   },
   initialize: () => {
     // append default css to haed
-    // __AcceptCookie.appendCSS();
+    __AcceptCookie.appendCSS();
 
     // if no cookie found show prompt
     const cookieValue = __AcceptCookie.get();
@@ -64,6 +64,7 @@ let __AcceptCookie = {
     document.body.appendChild(promptEl);
     // for animation
     __AcceptCookie.timer = setTimeout(() => {
+      __AcceptCookie.el().style.visibility = 'visible';
       __AcceptCookie.el().style.opacity = '1';
       __AcceptCookie.el().style.bottom = __AcceptCookie.defaults.showPx;
     }, 500);
@@ -86,6 +87,8 @@ let __AcceptCookie = {
   },
   hide: () => {
     __AcceptCookie.el().style.bottom = __AcceptCookie.defaults.hidePx;
+    __AcceptCookie.el().style.opacity = 0;
+    __AcceptCookie.el().style.visibility = 'hidden';
   },
   setCookie: (cookieName, value, expireInDays) => {
     let d = new Date();

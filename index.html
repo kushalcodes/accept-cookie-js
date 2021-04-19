@@ -9,7 +9,7 @@
     body{
       margin: 0;
     }
-    .__AcceptCookie{
+    /* .__AcceptCookie{
       position: fixed;
       bottom: 10px;
       padding: 20px;
@@ -79,12 +79,17 @@
         padding: 10px;
         font-size: 16px;
       }
-    }
+    } */
 
   </style>
+  <script src="accept-cookie-min.js"></script>
 </head>
 <body>
   
-  <script src="accept-cookie-min.js"></script>
+  
+  <script>
+    // initialize prompt with defaults
+    __AcceptCookie.initialize();
+  </script>
 </body>
 </html>
