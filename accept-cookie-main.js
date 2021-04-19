@@ -7,7 +7,7 @@
 });
 
 [
-  "https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js/accept-cookie.js"
+  "https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js/accept-cookie-min.js"
 ].forEach(src => {
   const script = document.createElement('script');
   script.setAttribute('src', src);
