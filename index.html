@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accept Cookie JS | @kushalcodes</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    .__AcceptCookie{
+      position: fixed;
+      bottom: 10px;
+      padding: 20px;
+      background-color: #000;
+      color: #fff;
+      width: 60%;
+      left: 20%;
+      margin: 0;
+      overflow: auto;
+      box-sizing: border-box;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      -webkit-transition: all .3s ease;
+      -moz-transition: all .3s ease;
+      -o-transition: all .3s ease;  
+      transition: all .3s ease;
+    }
+    .__AcceptCookie .__accept_text{
+      padding: 4px 0 0 0;
+      float: left;
+      text-align: justify;
+    }
+    .__AcceptCookie > button,
+    .__AcceptCookie .__accept_btn{
+      float: right;
+      padding: 8px;
+      box-sizing: border-box;
+      background-color: aliceblue;
+      color: #000;
+      text-align: center;
+      border-radius: 4px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      min-width: 50px;
+      z-index: 100000;
+    }
+    .__AcceptCookie > button:active{
+      background-color: antiquewhite;
+    }
+    .__AcceptCookie .__accept_btn{
+      border-radius: 0;
+      background-color: rgb(0, 0, 0);
+      padding: 4px 2px 2px 2px;
+    }
+    .__AcceptCookie a{
+      outline: none;
+      color: aqua !important;
+      text-decoration: none;
+    }
+    .__AcceptCookie a:hover{
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width:768px){
+      .__AcceptCookie{
+        width: 80%;
+        left: 10%;
+      }
+      .__AcceptCookie > button,
+      .__AcceptCookie .__accept_btn{
+        display: block;
+        width: 100%;
+        margin-top: 8px;
+        padding: 10px;
+        font-size: 16px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  
+  <script src="accept-cookie-min.js"></script>
+</body>
+</html>
