@@ -3,6 +3,7 @@
 let __AcceptCookie = {
   timer: null,
   customHTML: '',
+  dependencies: ["https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"],
   defaults: {
     expireInDays: 365,
     cookie: '__accepted',
@@ -22,7 +23,7 @@ let __AcceptCookie = {
   },
   initialize: () => {
     // append default css to haed
-    __AcceptCookie.appendCSS();
+    __AcceptCookie.loadCSS();
 
     // if no cookie found show prompt
     const cookieValue = __AcceptCookie.get();
@@ -30,12 +31,12 @@ let __AcceptCookie = {
 
     __AcceptCookie.freezeEm();
   },
-  appendCSS: () => {
-    let cssLinkEle = document.createElement('link');
-    cssLinkEle.setAttribute('rel', 'stylesheet');
-    cssLinkEle.setAttribute('type', 'text/css');
-    cssLinkEle.setAttribute('href', 'data:text/css;charset=UTF-8,' + encodeURIComponent(__AcceptCookie.defaults.css));
-    document.head.appendChild(cssLinkEle);
+  loadCSS: () => {
+    let cssLinkEl = document.createElement('link');
+    cssLinkEl.setAttribute('rel', 'stylesheet');
+    cssLinkEl.setAttribute('type', 'text/css');
+    cssLinkEl.setAttribute('href', 'data:text/css;charset=UTF-8,' + encodeURIComponent(__AcceptCookie.defaults.css));
+    document.head.appendChild(cssLinkEl);
   },
   prompt: () => {
     clearTimeout(__AcceptCookie.timer);
@@ -91,30 +92,33 @@ let __AcceptCookie = {
     __AcceptCookie.el().style.visibility = 'hidden';
   },
   setCookie: (cookieName, value, expireInDays) => {
-    let d = new Date();
-    d.setTime(d.getTime() + (expireInDays * 24 * 60 * 60 * 1000));
-    let expires = "expires=" + d.toUTCString();
-    document.cookie = cookieName + "=" + value + ";" + expires + ";path=/";
+    // let d = new Date();
+    // d.setTime(d.getTime() + (expireInDays * 24 * 60 * 60 * 1000));
+    // let expires = "expires=" + d.toUTCString();
+    // document.cookie = cookieName + "=" + value + ";" + expires + ";path=/";
+    Cookies.set(cookieName, value, { expires: expireInDays })
   },
   getCookie: (cookieName) => {
-    let name = cookieName + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
+    // let name = cookieName + "=";
+    // let decodedCookie = decodeURIComponent(document.cookie);
+    // let ca = decodedCookie.split(';');
+    // for (let i = 0; i < ca.length; i++) {
+    //   let c = ca[i];
+    //   while (c.charAt(0) == ' ') {
+    //     c = c.substring(1);
+    //   }
+    //   if (c.indexOf(name) == 0) {
+    //     return c.substring(name.length, c.length);
+    //   }
+    // }
+    // return "";
+    return Cookies.get(cookieName);
   },
 
   freezeEm: () => {
     Object.freeze(__AcceptCookie.customHTML);
     Object.freeze(__AcceptCookie.defaults);
+    Object.freeze(__AcceptCookie.dependencies);
     Object.freeze(__AcceptCookie.setExpiration);
     Object.freeze(__AcceptCookie.setCookieVaue);
     Object.freeze(__AcceptCookie.setText);
