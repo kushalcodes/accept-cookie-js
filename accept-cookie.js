@@ -31,6 +31,9 @@ let __AcceptCookie = {
 
     __AcceptCookie.freezeEm();
   },
+  init:()=>{
+    __AcceptCookie.initialize();
+  },
   loadCSS: () => {
     let cssLinkEl = document.createElement('link');
     cssLinkEl.setAttribute('rel', 'stylesheet');
