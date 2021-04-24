@@ -8,7 +8,7 @@
 
 ## dependency
 
-> we use https://github.com/js-cookie/js-cookie for multiple browser support
+> https://github.com/js-cookie/js-cookie is used for cookie handling, multiple browser support
 
 ### initialize
 
