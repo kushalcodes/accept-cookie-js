@@ -4,7 +4,7 @@
 
 ## cdn
 
-> https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js/accept-cookie-min.js
+> https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js@fd9f3cd6ec5bc46beff426a75075184d7c9cf24e/accept-cookie-min.js
 
 ## dependency
 
