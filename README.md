@@ -4,7 +4,7 @@
 
 ## cdn
 
-> https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js/accept-cookie-main.js
+> https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js/accept-cookie-min.js
 
 ## dependency
 
@@ -14,7 +14,7 @@
 
     window.onload = () => {
       // initialize accept cookie prompt with defaults
-      // __AcceptCookie.initialize() 
+      // __AcceptCookie.initialize()
       __AcceptCookie.init();
     };
 

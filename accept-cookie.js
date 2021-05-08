@@ -169,3 +169,10 @@ let __AcceptCookie = {
   onAccepted: () => { },
   onCancel: () => { }
 };
+
+// load dependencies
+__AcceptCookie.dependencies.forEach(src => {
+  const script = document.createElement('script');
+  script.setAttribute('src', src);
+  document.head.appendChild(script);
+});
