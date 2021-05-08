@@ -4,11 +4,10 @@
 
 ## cdn
 
-> https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js@fd9f3cd6ec5bc46beff426a75075184d7c9cf24e/accept-cookie-min.js
+    https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js@3295dac99a7c877fd6567b505f0c639ecb7b0cc4/accept-cookie-min.js
 
-## dependency
-
-> https://github.com/js-cookie/js-cookie is used for cookie handling, multiple browser support
+    // add script on head or body
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js@3295dac99a7c877fd6567b505f0c639ecb7b0cc4/accept-cookie-min.js"></script>
 
 ### initialize
 
@@ -94,3 +93,7 @@ onCancel();
 ```
 
 > default values used unless setted using setters
+
+## dependencies used
+
+> https://github.com/js-cookie/js-cookie is used for cookie handling, multiple browser support
