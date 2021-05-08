@@ -24,8 +24,6 @@
 
 > Note: Use setters before initializing
 
----
-
 ```javascript
 // set expiration in days for the cookie, default : 365 days
 __AcceptCookie.setExpiration(365);
