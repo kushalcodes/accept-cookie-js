@@ -4,7 +4,7 @@
 
 ### Load library
 
-    <!-- add script with src (cdn link) on head or body as: -->
+    <!-- add script on head or body: -->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js@3295dac99a7c877fd6567b505f0c639ecb7b0cc4/accept-cookie-min.js"
@@ -12,8 +12,8 @@
     </script>
 ---
 ### Use 
-- Load the library and initialize it on onload to use, eg:
-- View index.html for an example
+- View index.html for an example use
+- Load the library and initialize it on onload to use:
 
 ```javascript
     window.onload = () => {
