@@ -13,8 +13,9 @@
 ### initialize
 
     window.onload = () => {
-      // initialize prompt with defaults
-      __AcceptCookie.initialize();
+      // initialize accept cookie prompt with defaults
+      // __AcceptCookie.initialize() 
+      __AcceptCookie.init();
     };
 
 > initialize accept cookie js with default values

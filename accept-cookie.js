@@ -27,11 +27,11 @@ let __AcceptCookie = {
 
     // if no cookie found show prompt
     const cookieValue = __AcceptCookie.get();
-    if (cookieValue === "") __AcceptCookie.prompt();
+    if (!cookieValue) __AcceptCookie.prompt();
 
     __AcceptCookie.freezeEm();
   },
-  init:()=>{
+  init: () => {
     __AcceptCookie.initialize();
   },
   loadCSS: () => {
