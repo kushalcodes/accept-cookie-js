@@ -1,31 +1,31 @@
 # accept-cookie-js
 
-> simple, small library to save your time for accept cookie prompt to users
+- Simple, small library to save your time for prompting users with accept cookie policy prompt
 
-## cdn
-    <!-- cdn link -->
-    https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js@3295dac99a7c877fd6567b505f0c639ecb7b0cc4/accept-cookie-min.js
+### Load library
 
-    <!-- add script with cdn link on head or body -->
+    <!-- add script with src (cdn link) on head or body as: -->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js@3295dac99a7c877fd6567b505f0c639ecb7b0cc4/accept-cookie-min.js"
     >
     </script>
+---
+### Use 
+- Load the library and initialize it on onload to use, eg:
+- View index.html for an example
 
-> just load the script and initialize it to use
-
-### initialize
-
+```javascript
     window.onload = () => {
-      <!-- initialize accept cookie prompt with defaults -->
-      <!-- __AcceptCookie.initialize() -->
+      // initialize accept cookie prompt with defaults 
+      // __AcceptCookie.initialize() or __AcceptCookie.init()
       __AcceptCookie.init();
     };
+```
+---
+### Setters
 
-### setters
-
-> Note: Use setters before initializing
+###### Note: Use setters before initializing
 
 ```javascript
 // set expiration in days for the cookie, default : 365 days
@@ -35,31 +35,29 @@ __AcceptCookie.setExpiration(365);
 __AcceptCookie.setCookieVaue("custom cookie value to be set");
 
 // set custom text to cookie prompt
-setText("custom text");
+__AcceptCookie.setText("custom text");
 
 //set class name of cookie prompt
-setClassName(customClassName);
+__AcceptCookie.setClassName(customClassName);
 
 //set id of cookie prompt
-setId(customId);
+__AcceptCookie.setId(customId);
 
 // set bg color of cookie prompt
-setBgColor(color);
+__AcceptCookie.setBgColor(color);
 
 //set border radius of cookie prompt, default : 10px
-setBorderRadius(radiusValue);
+__AcceptCookie.setBorderRadius(radiusValue);
 
 //default prompt has readmore button, can set its url using
-setReadMoreURL("url");
+__AcceptCookie.setReadMoreURL("url");
 
 // set custom html for prompt
 //accepts html string or node else throws console error
-setHTML(htmlStringOrNode);
+__AcceptCookie.setHTML(htmlStringOrNode);
 ```
 
-> Note: Use setters then \_\_AcceptCookie.initialize();
-
-### events
+### Events
 
 ```javascript
 //fires when accept btn clicked unless customHTML used
@@ -69,7 +67,7 @@ onAccepted();
 onCancel();
 ```
 
-> can use events before or after initialization
+- events can be used before or after initialization unlike setters
 
 ## defaults
 
@@ -91,8 +89,8 @@ onCancel();
    text : 'We use &#127850; cookies for our users to get the best experience.'
 ```
 
-> default values used unless setted using setters
+- default values used unless setted using setters
 
 ## dependencies used
 
-> https://github.com/js-cookie/js-cookie is used for cookie handling, multiple browser support
+- https://github.com/js-cookie/js-cookie  used for cookie handling, multiple browser support
