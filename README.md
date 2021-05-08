@@ -3,15 +3,15 @@
 > simple, small library to save your time for accept cookie prompt to users
 
 ## cdn
-<!-- cdn link -->
-https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js@3295dac99a7c877fd6567b505f0c639ecb7b0cc4/accept-cookie-min.js
+    <!-- cdn link -->
+    https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js@3295dac99a7c877fd6567b505f0c639ecb7b0cc4/accept-cookie-min.js
 
-<!-- add script with cdn link on head or body -->
-<script
-  type="text/javascript"
-  src="https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js@3295dac99a7c877fd6567b505f0c639ecb7b0cc4/accept-cookie-min.js"
->
-</script>
+    <!-- add script with cdn link on head or body -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/gh/kushalcodes/accept-cookie-js@3295dac99a7c877fd6567b505f0c639ecb7b0cc4/accept-cookie-min.js"
+    >
+    </script>
 
 > just load the script and initialize it to use
 
