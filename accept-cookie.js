@@ -3,6 +3,19 @@
 let __AcceptCookie = {
   timer: null,
   customHTML: '',
+  cancelBtn: {
+    color: 'red',
+    fontSize: '21px',
+    html: '&#128473;',
+    padding: '0 0 0 0',
+    allow: true
+  },
+  acceptBtn: {
+    bgColor: 'aliceblue',
+    color: '#000000',
+    allow: true,
+    html: 'Accept'
+  },
   dependencies: ["https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"],
   defaults: {
     expireInDays: 365,
@@ -50,8 +63,8 @@ let __AcceptCookie = {
     promptEl.style.backgroundColor = __AcceptCookie.defaults.bgColor;
     if (__AcceptCookie.customHTML === null || __AcceptCookie.customHTML.trim() === "") {
       promptEl.innerHTML = '<div class="__accept_text">' + __AcceptCookie.defaults.text + ' <a href="' + __AcceptCookie.defaults.readMoreURL + '">Read More</a> </div>';
-      promptEl.innerHTML += '<span class="__accept_btn" onclick="__AcceptCookie.cancel()">&#10060;</span>';
-      promptEl.innerHTML += '<button onclick="__AcceptCookie.accept()">Accept</button>';
+      if (__AcceptCookie.cancelBtn.allow) promptEl.innerHTML += '<span class="__accept_btn" style="background-color:' + __AcceptCookie.defaults.bgColor + ';color:' + __AcceptCookie.cancelBtn.color + ';font-size:' + __AcceptCookie.cancelBtn.fontSize + ';padding:' + __AcceptCookie.cancelBtn.padding + ';" onclick="__AcceptCookie.cancel()">' + __AcceptCookie.cancelBtn.html + '</span>';
+      if (__AcceptCookie.acceptBtn.allow) promptEl.innerHTML += '<button onclick="__AcceptCookie.accept()" style="background-color:' + __AcceptCookie.acceptBtn.bgColor + ';color: ' + __AcceptCookie.acceptBtn.color + '";>' + __AcceptCookie.acceptBtn.html + "</button>";
     } else {
       if (typeof __AcceptCookie.customHTML === "string") {
         promptEl.innerHTML = __AcceptCookie.customHTML;
@@ -95,26 +108,9 @@ let __AcceptCookie = {
     __AcceptCookie.el().style.visibility = 'hidden';
   },
   setCookie: (cookieName, value, expireInDays) => {
-    // let d = new Date();
-    // d.setTime(d.getTime() + (expireInDays * 24 * 60 * 60 * 1000));
-    // let expires = "expires=" + d.toUTCString();
-    // document.cookie = cookieName + "=" + value + ";" + expires + ";path=/";
     Cookies.set(cookieName, value, { expires: expireInDays })
   },
   getCookie: (cookieName) => {
-    // let name = cookieName + "=";
-    // let decodedCookie = decodeURIComponent(document.cookie);
-    // let ca = decodedCookie.split(';');
-    // for (let i = 0; i < ca.length; i++) {
-    //   let c = ca[i];
-    //   while (c.charAt(0) == ' ') {
-    //     c = c.substring(1);
-    //   }
-    //   if (c.indexOf(name) == 0) {
-    //     return c.substring(name.length, c.length);
-    //   }
-    // }
-    // return "";
     return Cookies.get(cookieName);
   },
 
@@ -163,6 +159,22 @@ let __AcceptCookie = {
   },
   setHTML: (htmlOrNode) => {
     __AcceptCookie.customHTML = htmlOrNode;
+  },
+  hideCancelBtn: () => {
+    __AcceptCookie.cancelBtn.allow = false;
+  },
+  setCancelBtnHTML: (htmlString) => {
+    __AcceptCookie.cancelBtn.html = htmlString;
+  },
+  hideAcceptBtn: () => {
+    __AcceptCookie.acceptBtn.allow = false;
+  },
+  setAcceptBtnHTML: (htmlString) => {
+    __AcceptCookie.acceptBtn.html = htmlString;
+  },
+  setAcceptBtnColors: (color = null, bgColor = null) => {
+    if (color) __AcceptCookie.acceptBtn.color = color;
+    if (bgColor) __AcceptCookie.acceptBtn.bgColor = bgColor;
   },
 
   // events
