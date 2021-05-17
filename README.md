@@ -64,10 +64,16 @@ __AcceptCookie.setHTML(htmlStringOrNode);
 
 ```javascript
 //fires when accept btn clicked unless customHTML used
-onAccepted();
+__AcceptCookie.onAccepted = () => { 
+    // do your stuff
+    // alert('Accepted'); 
+};
 
 //fires when cancel or cross btn clicked unless customHTML used
-onCancel();
+__AcceptCookie.onCancel = () => { 
+    // do your stuff 
+    // alert('Cancled');
+};
 ```
 
 - events can be used before or after initialization unlike setters
