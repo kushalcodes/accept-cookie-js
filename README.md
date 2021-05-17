@@ -1,7 +1,9 @@
 # accept-cookie-js
 
 - Simple, small library to save your time for prompting users with accept cookie policy prompt
-- https://codepen.io/kushalcodes/pen/KKWgmBy
+
+### Example 
+Codepen demo: https://codepen.io/kushalcodes/pen/KKWgmBy
 
 ### Load library
 
