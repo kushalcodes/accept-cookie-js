@@ -1,5 +1,4 @@
-// @kushalcodes
-// completely free no copyright
+// accept-cookie-js by @kushalcodes
 let __AcceptCookie = {
   timer: null,
   customHTML: '',
@@ -165,6 +164,9 @@ let __AcceptCookie = {
   },
   setCancelBtnHTML: (htmlString) => {
     __AcceptCookie.cancelBtn.html = htmlString;
+  },
+  setCancelBtnColor: (color) => {
+    __AcceptCookie.cancelBtn.color = color;
   },
   hideAcceptBtn: () => {
     __AcceptCookie.acceptBtn.allow = false;

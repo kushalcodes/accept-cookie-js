@@ -86,6 +86,9 @@ __AcceptCookie.onCancel = () => {
     // hide cancel btn
     __AcceptCookie.hideCancelBtn();
 
+    // set cancel button color
+    __AcceptCookie.setCancelBtnColor(color);
+
     // set accept btn html
     __AcceptCookie.setAcceptBtnHTML(htmlString);
 
